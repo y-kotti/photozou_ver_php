@@ -18,6 +18,6 @@ function main()
     echo 'your photozou password?:';
     $password = trim(fgets(STDIN));
 
-    $phptozou = new Photozou($photozou_id, $password);
+    $phptozou = new Photozou($album_id, $photozou_id, $password);
     $phptozou->download_all_images($album_id, $limit);
 }

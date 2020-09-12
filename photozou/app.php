@@ -8,7 +8,7 @@ class Photozou
     protected $options;
     protected $base_dir;
     
-    public function __construct($photozou_id, $password)
+    public function __construct($album_id, $photozou_id, $password)
     {
         $this->photozou_id = $photozou_id;
         $this->password = $password;
@@ -22,7 +22,7 @@ class Photozou
         ];
 
         $now = date('Y-m-d');
-        $this->base_dir = 'Picture' . $now;
+        $this->base_dir = 'Picture_' . $album_id . '_' .  $now;
         
         if (!file_exists($this->base_dir)) {
             mkdir($this->base_dir);
